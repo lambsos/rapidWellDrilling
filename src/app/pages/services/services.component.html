@@ -1,0 +1,20 @@
+<section class="services-page">
+    <div class="services-container">
+        <h1 class="page-title">Sales and Services</h1>
+        <p class="page-subtitle">Comprehensive well drilling and water system services for Boise, Idaho and surrounding areas</p>
+        
+        <nav class="services-nav">
+            <a *ngFor="let tab of serviceTabs" 
+               [routerLink]="tab.route" 
+               routerLinkActive="active"
+               mat-button
+               class="service-nav-link">
+                {{ tab.label }}
+            </a>
+        </nav>
+        
+        <div class="services-content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</section>

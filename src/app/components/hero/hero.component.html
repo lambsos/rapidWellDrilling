@@ -1,0 +1,13 @@
+<section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 class="hero-headline">{{ companyName }}</h1>
+        <p class="hero-subtext">{{ subtext }}</p>
+        <a [routerLink]="getEstimateHref()" 
+           mat-raised-button 
+           color="accent" 
+           class="hero-cta-button">
+            Request Estimate
+        </a>
+    </div>
+</section>

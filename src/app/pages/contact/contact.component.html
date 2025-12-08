@@ -1,0 +1,97 @@
+<section class="contact-section">
+    <div class="contact-container">
+        <h1 class="section-title">Contact Us</h1>
+        <p class="section-subtitle">Get in touch for a free estimate or emergency service</p>
+        
+        <div class="contact-content">
+            <div class="contact-info">
+                <mat-card class="info-card">
+                    <mat-card-content>
+                        <div class="info-item">
+                            <mat-icon>phone</mat-icon>
+                            <div>
+                                <h3>Phone</h3>
+                                <a [href]="getPhoneHref()">{{ phoneNumber }}</a><br>
+                                <a [href]="getSecondaryPhoneHref()">{{ secondaryPhoneNumber }}</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <mat-icon>email</mat-icon>
+                            <div>
+                                <h3>Email</h3>
+                                <a [href]="'mailto:' + email">{{ email }}</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <mat-icon>location_on</mat-icon>
+                            <div>
+                                <h3>Location</h3>
+                                <p>{{ location }} and Surrounding Areas</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <mat-icon>schedule</mat-icon>
+                            <div>
+                                <h3>Service Hours</h3>
+                                <p>24/7 Emergency Service Available</p>
+                                <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            
+            <div class="contact-form-wrapper">
+                <mat-card class="form-card">
+                    <mat-card-content>
+                        <h3 class="form-title">Request a Free Estimate</h3>
+                        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+                            <mat-form-field appearance="outline" class="full-width">
+                                <mat-label>Name</mat-label>
+                                <input matInput formControlName="name" required>
+                                <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
+                                    Name is required
+                                </mat-error>
+                            </mat-form-field>
+                            
+                            <mat-form-field appearance="outline" class="full-width">
+                                <mat-label>Email</mat-label>
+                                <input matInput type="email" formControlName="email" required>
+                                <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+                                    Email is required
+                                </mat-error>
+                                <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+                                    Please enter a valid email
+                                </mat-error>
+                            </mat-form-field>
+                            
+                            <mat-form-field appearance="outline" class="full-width">
+                                <mat-label>Phone</mat-label>
+                                <input matInput type="tel" formControlName="phone" required>
+                                <mat-error *ngIf="contactForm.get('phone')?.hasError('required')">
+                                    Phone is required
+                                </mat-error>
+                            </mat-form-field>
+                            
+                            <mat-form-field appearance="outline" class="full-width">
+                                <mat-label>Message</mat-label>
+                                <textarea matInput formControlName="message" rows="5" required></textarea>
+                                <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
+                                    Message is required
+                                </mat-error>
+                            </mat-form-field>
+                            
+                            <button mat-raised-button 
+                                    color="primary" 
+                                    type="submit" 
+                                    class="submit-button"
+                                    [disabled]="!contactForm.valid">
+                                Submit Request
+                            </button>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</section>

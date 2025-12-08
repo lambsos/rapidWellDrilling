@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+@use '@angular/material' as mat;
+@use './_theme-colors' as theme;
+
+@include mat.core();
+
+// Use Material 3 theme API with the generated palettes
+$theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: theme.$primary-palette,
+    tertiary: theme.$tertiary-palette,
+  ),
+));
+
+// Material 3 themes must be wrapped in a selector
+:root {
+  @include mat.all-component-themes($theme);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

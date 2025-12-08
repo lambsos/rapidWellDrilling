@@ -1,0 +1,18 @@
+<section class="services-section">
+    <div class="services-container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Comprehensive well drilling and water system services for Boise, Idaho and surrounding areas</p>
+        
+        <div class="services-grid">
+            <mat-card *ngFor="let service of services" class="service-card">
+                <mat-card-content>
+                    <div class="service-icon">
+                        <mat-icon>{{ service.icon }}</mat-icon>
+                    </div>
+                    <h3 class="service-title">{{ service.title }}</h3>
+                    <p class="service-description">{{ service.description }}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,40 @@
+<mat-toolbar class="header-toolbar">
+  <div class="header-content">
+    <div class="logo-section">
+      <span class="company-name">RAPID WELL DRILLING</span>
+      <span class="company-subtitle">LLC</span>
+    </div>
+
+    <nav class="nav-section" *ngIf="true">
+      <a
+        *ngFor="let item of navItems"
+        [routerLink]="item.route"
+        mat-button
+        class="nav-link"
+        routerLinkActive="active"
+      >
+        {{ item.label }}
+      </a>
+    </nav>
+
+    <div class="contact-section">
+      <span class="location">{{ location }}</span>
+      <div class="phone-numbers">
+        <a [href]="getPhoneHref()" class="phone-link">
+          {{ phoneNumber }}
+        </a>
+        <a [href]="getSecondaryPhoneHref()" class="phone-link secondary">
+          {{ secondaryPhoneNumber }}
+        </a>
+      </div>
+      <a
+        mat-raised-button
+        color="accent"
+        class="estimate-button"
+        routerLink="/contact-us"
+      >
+        Request Estimate
+      </a>
+    </div>
+  </div>
+</mat-toolbar>

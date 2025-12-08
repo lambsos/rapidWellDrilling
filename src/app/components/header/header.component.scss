@@ -1,0 +1,115 @@
+.header-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    height: auto;
+    min-height: 80px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    .company-name {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    
+    .company-subtitle {
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+.nav-section {
+    display: flex;
+    gap: 8px;
+    flex: 1;
+    justify-content: center;
+    
+    .nav-link {
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        
+        &.active {
+        }
+        
+        &:hover {
+        }
+    }
+}
+
+.contact-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    
+    .location {
+        font-size: 14px;
+    }
+    
+    .phone-numbers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+    }
+    
+    .phone-link {
+        color: black;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+        
+        &.secondary {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+    }
+    
+    .estimate-button {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 960px) {
+    .header-content {
+        flex-direction: column;
+        padding: 16px;
+    }
+    
+    .nav-section {
+        width: 100%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    
+    .contact-section {
+        width: 100%;
+        justify-content: center;
+    }
+}
+

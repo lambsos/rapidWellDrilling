@@ -1,0 +1,19 @@
+<section class="gallery-section">
+    <div class="gallery-container">
+        <h1 class="page-title">Gallery</h1>
+        <p class="page-subtitle">View our work and equipment in action</p>
+        
+        <div class="gallery-grid">
+            <mat-card *ngFor="let item of galleryItems" class="gallery-card">
+                <div class="gallery-image-placeholder">
+                    <mat-icon class="placeholder-icon">image</mat-icon>
+                    <p>{{ item.title }}</p>
+                </div>
+                <mat-card-content>
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.description }}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</section>

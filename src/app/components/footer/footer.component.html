@@ -1,0 +1,45 @@
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3 class="footer-title">{{ companyName }}</h3>
+            <p class="footer-text">Professional well drilling services in Boise, ID and surrounding areas.</p>
+        </div>
+        
+        <div class="footer-section">
+            <h4 class="footer-heading">Quick Links</h4>
+            <nav class="footer-nav">
+                <a *ngFor="let item of navItems" 
+                   [routerLink]="item.route" 
+                   class="footer-link">
+                    {{ item.label }}
+                </a>
+            </nav>
+        </div>
+        
+        <div class="footer-section">
+            <h4 class="footer-heading">Contact</h4>
+            <div class="footer-contact">
+                <a [href]="getPhoneHref()" class="footer-contact-item">
+                    <mat-icon>phone</mat-icon>
+                    {{ phoneNumber }}
+                </a>
+                <a [href]="getSecondaryPhoneHref()" class="footer-contact-item">
+                    <mat-icon>phone</mat-icon>
+                    {{ secondaryPhoneNumber }}
+                </a>
+                <a [href]="'mailto:' + email" class="footer-contact-item">
+                    <mat-icon>email</mat-icon>
+                    {{ email }}
+                </a>
+                <div class="footer-contact-item">
+                    <mat-icon>location_on</mat-icon>
+                    {{ address }}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; {{ currentYear }} {{ companyName }}. All rights reserved.</p>
+    </div>
+</footer>

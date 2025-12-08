@@ -1,0 +1,62 @@
+.service-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    color: #0b658a;
+}
+
+.service-intro {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #666;
+    margin: 0 0 32px 0;
+}
+
+.service-details {
+    display: grid;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+mat-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+}
+
+mat-card-content {
+    padding: 24px;
+    
+    h3 {
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0 0 16px 0;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        
+        mat-icon {
+            color: #0b658a;
+            font-size: 28px;
+            width: 28px;
+            height: 28px;
+        }
+    }
+    
+    p {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #666;
+        margin: 0;
+    }
+}
+
